@@ -1,0 +1,4 @@
+[source,bash]
+----
+$ echo '{"id":10,"productType":null,"expires":1480574890305,"purchaseDetails":[{"id":1,"description":"XXL wedding cake","quantity":null,"value":500.0}]}' | http PUT 'http://localhost:8080/api/purchases/10' 'Accept:application/json;charset=UTF-8' 'Content-Type:application/json;charset=UTF-8'
+----

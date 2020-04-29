@@ -1,0 +1,10 @@
+[source,http,options="nowrap"]
+----
+PUT /api/purchases/1 HTTP/1.1
+Accept: application/json;charset=UTF-8
+Content-Type: application/json;charset=UTF-8
+Host: localhost:8080
+Content-Length: 142
+
+{"id":1,"productType":"Cake","expires":1480574890545,"purchaseDetails":[{"id":1,"description":"XXL wedding cake","quantity":1,"value":100.0}]}
+----

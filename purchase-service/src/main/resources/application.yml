@@ -1,0 +1,42 @@
+spring:
+  profiles:
+    active: dev
+---
+server:
+  port: ${vcap.application.port:9000}
+
+spring.aop.proxy-target-class: true
+
+logging.level:
+  org.springframework.web.filter.CommonsRequestLoggingFilter: DEBUG
+  org.springframework.aop.interceptor.JamonPerformanceMonitorInterceptor: TRACE
+  pt.pmribeiro.webstore:
+    service: TRACE
+    controller: TRACE
+    repository: TRACE
+
+spring.jackson.serialization.WRITE_DATES_AS_TIMESTAMPS: false
+---
+spring:
+  profiles: dev
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: ${vcap.services.eureka-service.credentials.uri:http://127.0.0.1:8761}/eureka/
+---
+spring:
+  profiles: docker
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://discovery-service:8761/eureka/
+
+

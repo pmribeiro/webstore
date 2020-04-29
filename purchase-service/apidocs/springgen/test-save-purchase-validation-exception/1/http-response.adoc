@@ -1,0 +1,8 @@
+[source,http,options="nowrap"]
+----
+HTTP/1.1 400 Bad Request
+Content-Type: application/json;charset=UTF-8
+Content-Length: 291
+
+{"code":"InvalidPurchase","fieldErrors":[{"code":"","field":"productType","resource":"purchase","message":"ProductType is empty"},{"code":"","field":"purchaseDetails[0].quantity","resource":"purchase","message":"PurchaseDetail quantity is null or equals to 0"}],"message":"Invalid purchase"}
+----

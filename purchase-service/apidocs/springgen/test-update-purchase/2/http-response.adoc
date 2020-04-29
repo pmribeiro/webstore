@@ -1,0 +1,8 @@
+[source,http,options="nowrap"]
+----
+HTTP/1.1 404 Not Found
+Content-Type: application/json;charset=UTF-8
+Content-Length: 52
+
+{"code":"NotFound","message":"Purchase 1 not found"}
+----

@@ -1,0 +1,45 @@
+version: '2'
+services:
+  discovery-service:
+    image: pmribeiro/discovery-service
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    ports:
+      - 8761:8761
+
+  purchase-service:
+    image: pmribeiro/purchase-service
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    ports:
+      - 9000:9000
+    depends_on:
+      - discovery-service
+    links:
+      - discovery-service
+
+  edge-service:
+    image: pmribeiro/edge-service
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    ports:
+      - 8080:8080
+    depends_on:
+      - discovery-service
+      - purchase-service
+    links:
+      - discovery-service
+      - purchase-service
+
+  hystrix-dashboard:
+    image: pmribeiro/hystrix-dashboard
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    ports:
+      - 7979:7979
+    depends_on:
+      - discovery-service
+      - purchase-service
+    links:
+      - discovery-service
+      - purchase-service

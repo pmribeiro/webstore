@@ -1,0 +1,4 @@
+[source,bash]
+----
+$ curl 'http://localhost:8080/api/purchases/id' -i -X PUT -H 'Accept: application/json;charset=UTF-8' -H 'Content-Type: application/json;charset=UTF-8' -d '{"id":1,"productType":"Cake","expires":1480562402517,"purchaseDetails":[{"id":1,"description":"XXL wedding cake","quantity":1,"value":500.0}]}'
+----

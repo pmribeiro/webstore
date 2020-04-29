@@ -1,0 +1,8 @@
+[source,http,options="nowrap"]
+----
+HTTP/1.1 409 Conflict
+Content-Type: application/json;charset=UTF-8
+Content-Length: 72
+
+{"code":"DataIntegrityViolation","message":"Invalid purchase detail id"}
+----

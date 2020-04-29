@@ -1,0 +1,8 @@
+[source,http,options="nowrap"]
+----
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+Content-Length: 152
+
+[{"id":1,"productType":"Cake","expires":1480574890513,"purchaseDetails":[]},{"id":2,"productType":"Tools","expires":1480574890513,"purchaseDetails":[]}]
+----

@@ -1,0 +1,8 @@
+[source,http,options="nowrap"]
+----
+HTTP/1.1 201 Created
+Content-Type: application/json;charset=UTF-8
+Content-Length: 142
+
+{"id":1,"productType":"Cake","expires":1480574889936,"purchaseDetails":[{"id":1,"description":"XXL wedding cake","quantity":1,"value":500.0}]}
+----
